@@ -1,23 +1,23 @@
 import UserRepository from "../repositories/UserRepository.js";
 
-const UserRepository = {
+const userService = {
   recoveruser: async () => {
     const result = await UserRepository.select();
     return result;
   },
 
   retrieveuserbyid: async (userid) => {
-    const result = await UserRepository.retrieveuserbyid(userid);
+    const result = await UserRepository.selectid(userid);
     return result;
   },
 
   deleteuser: async (userid) => {
-    const result = await UserRepository.deleteuser(userid);
+    const result = await UserRepository.delete(userid);
     return result;
   },
 
   createuser: async (user) => {
-    const result = await UserRepository.createuser(
+    const result = await UserRepository.create(
       user.name,
       user.email,
       user.password,

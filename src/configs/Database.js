@@ -1,7 +1,5 @@
 import mysaql from 'mysql2/promise'
 import 'dotenv/config'
-import User from '../models/User'
-
 const pool = mysaql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
