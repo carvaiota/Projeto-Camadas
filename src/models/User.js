@@ -12,7 +12,7 @@ class User {
   }
 
   get id() {
-    return this.id;
+    return this.#id;
   }
 
   get name() {

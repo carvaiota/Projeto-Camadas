@@ -14,6 +14,12 @@ const UserRepository = {
         return rows
     },
 
+     selectbyemail: async (email) => {
+        const sql = 'SELECT * FROM users WHERE email = ?'
+         const [rows] = await pool.execute(sql,[email])
+        return rows
+    },
+
     delete: async (usersid) => {
         const sql = 'DELETE  FROM users WHERE id = ?'
          const [rows] = await pool.execute(sql,[usersid])

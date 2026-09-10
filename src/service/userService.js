@@ -1,4 +1,5 @@
 import UserRepository from "../repositories/UserRepository.js";
+import decrypt  from decrypt;
 
 const userService = {
   recoveruser: async () => {
@@ -27,14 +28,24 @@ const userService = {
 
   
   updateuser: async (user) => {
-    const result = await UserRepository.updateuser(
+    const result = await UserRepository.update(
       user.name,
       user.email,
       user.password,
       user.id
     );
     return result;
-}
+},
+
+hashPassword: async(password) =>{
+  const hashedPassword = await bcrypt.hash(password, 10)
+  return hashedPassword
+},
+
+ retrieveUserbyemail: async (email) => {
+    const result = await UserRepository.selectbyemail(email);
+    return result;
+  },
 
 }
 
