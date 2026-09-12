@@ -28,9 +28,9 @@ const UserRepository = {
 
 
     
-    create: async (name,email,password) => {
-        const sql = 'INSERT INTO users VALUES (null,?,?,?)'
-         const [rows] = await pool.execute(sql,[name,email,password])
+    create: async (name,email,password,role) => {
+        const sql = 'INSERT INTO users VALUES (null,?,?,?,?)'
+         const [rows] = await pool.execute(sql,[name,email,password,role])
         return rows
     },
 

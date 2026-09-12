@@ -1,5 +1,5 @@
 import UserRepository from "../repositories/UserRepository.js";
-import decrypt  from decrypt;
+import bcrypt  from 'bcrypt';
 
 const userService = {
   recoveruser: async () => {
@@ -22,6 +22,7 @@ const userService = {
       user.name,
       user.email,
       user.password,
+      user.role
     );
     return result;
   },
